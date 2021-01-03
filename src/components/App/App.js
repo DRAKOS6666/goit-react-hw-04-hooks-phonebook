@@ -14,9 +14,7 @@ export default function App() {
     const contactsInLocalStorage = localStorage.getItem('contacts');
     if (contactsInLocalStorage) {
       try {
-        this.setState({
-          contacts: JSON.parse(contactsInLocalStorage),
-        });
+        setContacts(JSON.parse(contactsInLocalStorage));
         return;
       } catch (error) {
         console.log('LocalStoage parse Error');
